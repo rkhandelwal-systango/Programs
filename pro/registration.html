@@ -1,7 +1,176 @@
 <html>
+<head>
+<script>
+
+function validateForm(){
+  if(myForm.firstname.value.length==0)
+  {
+    document.getElementById('errfn').style.color = "#ff0000";
+document.getElementById('errfn').innerHTML="  ** Field cannot be left black";
+  }else if(myForm.firstname.value.length<5){
+document.getElementById('errfn').style.color = "#ff0000";
+document.getElementById('errfn').innerHTML="  ** FirstName should have atleast 5 characters";
+}else{
+document.getElementById('errfn').innerHTML=" ";
+}
+ 	
+}
+
+
+
+function validate() {
+  if(myForm.firstname.value.length==0)
+  {
+    document.getElementById('errfn').style.color = "#ff0000";
+document.getElementById('errfn').innerHTML="  ** Field cannot be left black";
+  }else if(myForm.firstname.value.length<5){
+document.getElementById('errfn').style.color = "#ff0000";
+document.getElementById('errfn').innerHTML="  ** FirstName should have atleast 5 characters";
+}else{
+document.getElementById('errfn').innerHTML=" ";
+}
+ }
+
+function validate1() {
+  if(myForm.lastname.value.length==0)
+  {
+    document.getElementById('errfn1').style.color = "#ff0000";
+document.getElementById('errfn1').innerHTML="  ** Field cannot be left black";
+  }else if(myForm.lastname.value.length<5){
+document.getElementById('errfn1').style.color = "#ff0000";
+document.getElementById('errfn1').innerHTML="  ** LastName should have atleast 5 characters";
+}else{
+document.getElementById('errfn1').innerHTML=" ";
+}
+ }
+
+
+function validate2() {
+  if(myForm.city.value.length==0)
+  {
+    document.getElementById('errfn2').style.color = "#ff0000";
+document.getElementById('errfn2').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn2').innerHTML=" ";
+}
+}
+
+function validate3() {
+  if(myForm.state.value.length==0)
+  {
+    document.getElementById('errfn3').style.color = "#ff0000";
+document.getElementById('errfn3').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn3').innerHTML=" ";
+}
+}
+
+function validate4() {
+  if(myForm.country.value.length==0)
+  {
+    document.getElementById('errfn4').style.color = "#ff0000";
+document.getElementById('errfn4').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn4').innerHTML=" ";
+}
+}
+function validate5() {
+  if(myForm.address.value.length==0)
+  {
+    document.getElementById('errfn5').style.color = "#ff0000";
+document.getElementById('errfn5').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn5').innerHTML=" ";
+}
+}
+
+function validate6() {
+  if(myForm.email.value.length==0)
+  {
+    document.getElementById('errfn6').style.color = "#ff0000";
+document.getElementById('errfn6').innerHTML="  ** Field cannot be left black";
+  }else{
+    var g = document.getElementById("email").value;
+    var atpos = g.indexOf("@");
+    var dotpos = g.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=g.length) {
+        document.getElementById('errfn6').style.color = "#ff0000";
+document.getElementById('errfn6').innerHTML="  ** Please enter valid Email-ID";
+    }
+else{
+document.getElementById('errfn6').innerHTML=" ";
+}
+    }
+}
+/*function validateForm() {
+    var a = document.forms["myForm"]["firstname"].value;
+    if (a == null || a == "") {
+        alert("FirstName field cannot be empty");
+        return false;
+    }else if(a.length <6){
+        alert("cannot be less than 5");
+    }
+
+    var b = document.forms["myForm"]["lastname"].value;
+    if (b == null || b == "") {
+        alert("Lastname field cannot be empty");
+        return false;
+    }
+
+
+    var c = document.forms["myForm"]["city"].value;
+    if (c == null || c == "") {
+        alert("City field cannot be empty");
+        return false;
+    }
+
+
+    var d = document.forms["myForm"]["state"].value;
+    if (d == null || d == "") {
+        alert("State field cannot be empty");
+        return false;
+    }
+
+
+    var e = document.forms["myForm"]["country"].value;
+    if (e == null || e == "") {
+        alert("Country field cannot be empty");
+        return false;
+    }
+
+
+
+    var f = document.forms["myForm"]["address"].value;
+    if (f == null || f == "") {
+        alert("Address field cannot be empty");
+        return false;
+    }
+
+
+    var g = document.forms["myForm"]["email"].value;
+    if (g == null || g == "") {
+        alert("Email field cannot be empty");
+        }else{
+    var atpos = g.indexOf("@");
+    var dotpos = g.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=g.length) {
+        alert("Please enter valid e-mail address");
+        return false;
+    }
+    }
+}
+
+document.getElementById("firstname").addEventListener("click", myFunction);
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Enter Your First Name";
+}
+*/
+</script>
+</head>
 <style>
 input[type=text], select {
-    width: 100%;
+    width: 50%;a
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -14,7 +183,7 @@ input[type=submit] {
     width: 20%;
     background-color: #4CAF50;
     color: white;
-    padding: 14px 20px;
+    padding: 14px 20px;wewewe
     margin: 8px 0;
     border: none;
     border-radius: 4px;
@@ -29,30 +198,30 @@ div{
 
     border-radius: 2px;
     background-color: #f2f2f2;
-    padding: 20px
+    padding: 15px
 }
 </style>
 
 <body>
 <div>
-<form>
-    First Name:&nbsp;
-    <input type="text" name="firstname">
-    Last Name:&nbsp;
-    <input type="text" name="lastname">
-    Gender :&nbsp;
+<form name="myForm" onsubmit="return validateForm()" onblur="validateForm()">
+    First Name:&nbsp;<br>
+    <input type="text" name="firstname" id="firstname" maxlength="12" onblur="validate()" ><span id="errfn"></span><br>
+    Last Name:&nbsp;<br>
+    <input type="text" name="lastname" onblur="validate1()"><span id="errfn1"></span><br>
+    Gender :&nbsp;<br>
     <input type="radio" name="sex" value="male">Male
     <input type="radio" name="sex" value="female">Female<br><br>
-    City: &nbsp;&nbsp;
-    <input type="text" name="city">	
-    State: &nbsp;&nbsp;
-    <input type="text" name="state">
-    Country: &nbsp;&nbsp;
-    <input type="text" name="country">
-    Premanent Address: &nbsp;&nbsp;
-    <input type="text" name="address">
-    Email Id: &nbsp;&nbsp;
-    <input type="text" name="email">
+    City: &nbsp;&nbsp;<br>
+    <input type="text" name="city" onblur="validate2()"><span id="errfn2"></span><br>	
+    State: &nbsp;&nbsp;<br>
+    <input type="text" name="state" onblur="validate3()"><span id="errfn3"></span><br>
+    Country: &nbsp;&nbsp;<br>
+    <input type="text" name="country" onblur="validate4()"><span id="errfn4"></span><br>
+    Premanent Address: &nbsp;&nbsp;<br>
+    <input type="text" name="address" onblur="validate5()"><span id="errfn5"></span><br>
+    Email Id: &nbsp;&nbsp;<br>
+    <input type="text" name="email" onblur="validate6()" id="email"><span id="errfn6"></span> <br>
     <input type="submit" value="submit"><br>
 </form>
 </div>
