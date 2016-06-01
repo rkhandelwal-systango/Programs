@@ -13,7 +13,66 @@ document.getElementById('errfn').innerHTML="  ** FirstName should have atleast 5
 }else{
 document.getElementById('errfn').innerHTML=" ";
 }
+
+ if(myForm.lastname.value.length==0)
+  {
+    document.getElementById('errfn1').style.color = "#ff0000";
+document.getElementById('errfn1').innerHTML="  ** Field cannot be left black";
+  }else if(myForm.lastname.value.length<5){
+document.getElementById('errfn1').style.color = "#ff0000";
+document.getElementById('errfn1').innerHTML="  ** LastName should have atleast 5 characters";
+}else{
+document.getElementById('errfn1').innerHTML=" ";
+}
  	
+if(myForm.city.value.length==0)
+  {
+    document.getElementById('errfn2').style.color = "#ff0000";
+document.getElementById('errfn2').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn2').innerHTML=" ";
+}
+
+ if(myForm.state.value.length==0)
+  {
+    document.getElementById('errfn3').style.color = "#ff0000";
+document.getElementById('errfn3').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn3').innerHTML=" ";
+}
+
+if(myForm.country.value.length==0)
+  {
+    document.getElementById('errfn4').style.color = "#ff0000";
+document.getElementById('errfn4').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn4').innerHTML=" ";
+}
+
+if(myForm.address.value.length==0)
+  {
+    document.getElementById('errfn5').style.color = "#ff0000";
+document.getElementById('errfn5').innerHTML="  ** Field cannot be left black";
+  }else{
+document.getElementById('errfn5').innerHTML=" ";
+}
+
+ if(myForm.email.value.length==0)
+  {
+    document.getElementById('errfn6').style.color = "#ff0000";
+document.getElementById('errfn6').innerHTML="  ** Field cannot be left black";
+  }else{
+    var g = document.getElementById("email").value;
+    var atpos = g.indexOf("@");
+    var dotpos = g.lastIndexOf(".");
+    if (atpos<1 || dotpos<atpos+2 || dotpos+2>=g.length) {
+        document.getElementById('errfn6').style.color = "#ff0000";
+document.getElementById('errfn6').innerHTML="  ** Please enter valid Email-ID";
+    }
+else{
+document.getElementById('errfn6').innerHTML=" ";
+}
+    }
 }
 
 
@@ -204,7 +263,7 @@ div{
 
 <body>
 <div>
-<form name="myForm" onsubmit="return validateForm()" onblur="validateForm()">
+<form name="myForm" onsubmit="return validateForm()" onblur="validateForm()" action="#">
     First Name:&nbsp;<br>
     <input type="text" name="firstname" id="firstname" maxlength="12" onblur="validate()" ><span id="errfn"></span><br>
     Last Name:&nbsp;<br>
