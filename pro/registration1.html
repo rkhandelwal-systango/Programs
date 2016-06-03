@@ -1,0 +1,36 @@
+<html>
+<head>
+<script type="text/javascript" src="file:///home/rkhandelwal/Desktop/myscripts.js"></script>
+<link rel="stylesheet" type="text/css" href="file:///home/rkhandelwal/Desktop/mycss.css" />
+</head>
+
+<body>
+<div>
+<form name="myForm" onsubmit="return validateForm()" action="#" >
+    First Name:&nbsp;<br>
+    <input type="text" name="firstname" id="firstname" maxlength="12" onblur="ValidateFirstName()" onkeypress="return onlyAlphabets(event,this);"><span id="errfn"></span><br>
+    Last Name:&nbsp;<br>
+    <input type="text" name="lastname" onblur="ValidateLastName()" onkeypress="return onlyAlphabets(event,this);"><span id="errfn1" ></span><br>
+    Gender :&nbsp;<br>
+    <input type="radio" name="gender" value="male" id="male" >Male
+    <input type="radio" name="gender" value="female" id="female" >Female &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	<span id="errfn7"></span><br><br>
+    City: &nbsp;&nbsp;<br>
+    <input type="text" name="city" onblur="ValidateCity()"><span id="errfn2"></span><br>	
+    State: &nbsp;&nbsp;<br>
+    <input type="text" name="state" onblur="ValidateState()"><span id="errfn3"></span><br>
+    Country: &nbsp;&nbsp;<br>
+    <input type="text" name="country" onblur="ValidateCountry()"><span id="errfn4"></span><br>
+    Premanent Address: &nbsp;&nbsp;<br>
+    <input type="text" name="address" onblur="ValidateAddress()"><span id="errfn5"></span><br>
+    Email Id: &nbsp;&nbsp;<br>
+    <input type="text" name="email" onblur="ValidateEmail()" id="email"><span id="errfn6"></span> <br>
+    <input type="submit" value="submit" ><br><br>
+    <p>Exisiting User :  &nbsp;<a href="file:///home/rkhandelwal/loginPage.html" class="button">Login</a>
+
+</div>
+
+</form>
+
+</div>
+</body>
+</html>
